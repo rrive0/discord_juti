@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from myserver import server_on
 import requests
 
 intents = discord.Intents.default()
@@ -10,6 +9,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 servers = {
+    'Star RP ': '103.91.190.156',
     'Starcommunity 1': '103.91.190.189',
     'Starcommunity 2': '103.91.190.68',
     'Starcommunity 3': '103.208.27.132',
@@ -20,8 +20,16 @@ servers = {
     'Starcommunity 8': '103.91.190.171',
     'Starcommunity 9': '103.91.190.103',
     'Starcommunity 10': '103.91.190.233',
+    'WHAT TRAINING 1': '146.19.69.171',
+    'WHAT TRAINING 2': '146.19.69.172',
+    'WHAT TRAINING 3': '146.19.69.173',
+    'WHAT TRAINING 4': '146.19.69.174',
     'MAFIA CITY': '103.216.159.124',
-    'STREER BOXING': '151.101.40.193'
+    'STREER BOXING': '151.101.40.193',
+    'STREER BOXING IP2': '103.91.190.33',
+    'LUV TOWE': '89.38.101.99',
+    'LAST CITY': '103.91.190.176',
+    'LAST CITY 2': '103.91.190.177'
 
 }
 
@@ -86,7 +94,7 @@ async def check_player(channel, server_ip: str, player_id: str):
                     if discord_avatar:
                         embed.set_thumbnail(url=discord_avatar)
 
-                    gif_url = "https://media.discordapp.net/attachments/1260172651578658907/1308675428050931712/Blue_and_Pink_Neon_Thanks_for_Watching_Video_1.gif?ex=673ece78&is=673d7cf8&hm=0106613feb031c0507cfefef34fa8553f907e661a4b12bbf3f55510bd9aa92b1&=&width=550&height=309"
+                    gif_url = "https://media.discordapp.net/attachments/1260172651578658907/1308675428050931712/Blue_and_Pink_Neon_Thanks_for_Watching_Video_1.gif?ex=673ece78&is=673d7cf8&hm=0106613feb031c0507cfefef34fa8553f907e661a4b12bbf3f55510bd9aa92b1&="
                     embed.set_image(url=gif_url)
 
                     embed.set_footer(text=f"ค้นหาข้อมูลโดย {channel.guild.name}", icon_url=channel.guild.icon.url)
@@ -112,7 +120,7 @@ async def check_player(channel, server_ip: str, player_id: str):
     except Exception as e:
         await channel.send(f"เกิดข้อผิดพลาด: {str(e)}")
 
-@bot.command(name='c')
+@bot.command(name='p')
 async def check(ctx, player_id: str):
     if not player_id.isdigit():
         await ctx.send("กรุณากรอก Player ID ที่ถูกต้อง (หมายเลข)")
@@ -147,7 +155,7 @@ async def check(ctx, player_id: str):
     await ctx.send(embed=embed, view=view)
     await ctx.message.delete()
 
-@bot.command(name='list')
+@bot.command(name='all')
 async def list_players(ctx):
     embed = discord.Embed(
         title="กรุณาเลือกเซิร์ฟเวอร์",
@@ -248,7 +256,7 @@ async def send_player_list(user, server_ip, ctx):
         await user.send(f"เกิดข้อผิดพลาด: {str(e)}")
         await ctx.send(f"เกิดข้อผิดพลาด: {str(e)}")
 
-@bot.command(name='cs')
+@bot.command(name='ps')
 async def check_by_ip(ctx, server_ip: str, player_id: str):
     if not player_id.isdigit():
         await ctx.send("กรุณากรอก Player ID ที่ถูกต้อง (หมายเลข)")
@@ -261,6 +269,4 @@ async def check_by_ip(ctx, server_ip: str, player_id: str):
 async def on_ready():
     print(f'Logged in as {bot.user.name} (ID: {bot.user.id})')
 
-server_on
-
-bot.run('MTMwODY2NTYwMTY4OTkxNTQ1Mw.GSXm1S.Xi3ZosDNe06Rw-9vwfbvbqmrDt93n-EMEPRZeE')
+bot.run('MTMwODY2NTYwMTY4OTkxNTQ1Mw.GbPnmk.t30l3wkltuMexu-zXIE6W00vw8tlVlK4e5u6bg')
