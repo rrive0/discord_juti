@@ -1,1 +1,6 @@
-pip install -r requirements.txt
+gunicorn
+flask
+discord.py
+requests
+mcrcon
+python-dotenv
