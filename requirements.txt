@@ -1,6 +1,7 @@
+discord
+python-dotenv
 gunicorn
 flask
 discord.py
 requests
 mcrcon
-python-dotenv
